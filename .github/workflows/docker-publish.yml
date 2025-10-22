@@ -36,10 +36,10 @@ jobs:
           file: ./docker/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/ghost-drive:${{ steps.version.outputs.VERSION }}
-            ${{ secrets.DOCKER_USERNAME }}/ghost-drive:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/ghost-drive:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/ghost-drive:buildcache,mode=max
+            ${{ secrets.DOCKER_USERNAME }}/ghost-drive-ui:${{ steps.version.outputs.VERSION }}
+            ${{ secrets.DOCKER_USERNAME }}/ghost-drive-ui:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/ghost-drive-ui:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/ghost-drive-ui:buildcache,mode=max
           build-args: |
             BUILDKIT_INLINE_CACHE=1
 
